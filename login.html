@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            padding: 0;
+            margin: 0;
+            background-image: url(movieroom.jpg);
+            background-size: 100%;
+            zoom: 100%;
+        }
+        .text{
+            color: white;
+        }
+        .movie{
+            text-shadow: 4px 4px black;
+        }
+        .navbar{
+            margin: 6% auto;
+            text-align: center;
+            padding: 20px;
+            background: #2C2C2C;
+            border: solid 3px #B22222;
+            width: 20%;
+        }
+        .container{
+           width: 20%;
+           background: #2C2C2C;
+           padding: 20px 0;
+           margin: 6% auto;
+           text-align: center;
+           min-height: 18vh;
+           border: solid 3px #B22222;
+        }
+        .input-box{
+           margin: 15px;
+           
+        }
+        .btn{
+            font-size: 20px;
+            background-color: #FFD700;
+        }
+        .account{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+		<h1 class="movie text">MOVIE DATABASE</h1>
+    </div>
+    <div class="container">
+        <h1 class="text">Login</h1>
+        <div class="input-box text">
+            <p class="text">Email</p>
+            <input type="email" id="l-email" required>
+        </div>
+        <div class="input-box text">
+            <p class="text">Password</p>
+            <input type="password" id="l-password" placeholder=" " required>
+        </div>
+        <button type="submit" class="btn" onclick="loginUser(event)">Login</button>
+        <p class="text">New to the Movie Database?</p>
+        <a href=register.html class="account">Don't have an account?</a>
+    </div>
+    <script>
+        function loginUser(event) {
+            event.preventDefault(); 
+            var email = document.getElementById('l-email').value;
+            var password = document.getElementById('l-password').value;
+    
+            var storedEmail = localStorage.getItem('email');
+            var storedPassword = localStorage.getItem('password');
+    
+            if (email === storedEmail && password === storedPassword) {
+                alert("Login successful");
+                localStorage.setItem('loggedIn', true);
+                window.location.href = "index.html";
+            } else {
+                alert("Invalid email or password");
+            }
+        }
+    </script>
+    
+</body>
+</html>

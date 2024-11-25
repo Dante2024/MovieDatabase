@@ -1,0 +1,85 @@
+body {
+    background-image: url("movies2.jpg");
+    font-family: 'Courier New', Courier, monospace !important;
+}
+
+.navbar{
+    background: #2C2C2C;
+    border-bottom: solid 5px #B22222;
+}
+.movie {
+    margin-left: 2%;
+    color: white;
+    text-shadow: 4px 4px black;
+}
+.text-black {
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+}
+.register{
+    background: #FFD700;
+    padding: 15px;
+    margin-left: 52%;
+    border: double 2px black;
+}
+.login{
+    background: #FFD700;
+    padding: 15px;
+    margin-right: 16%;
+    border: double 2px black;
+}
+.library{
+        background: #FFD700;
+        margin-left: 50%;
+        padding: 15px;
+        border: double 2px black;
+}
+.logout{
+    background: #FFD700;
+    padding: 15px;
+    margin-right: 16%;
+    border: double 2px black;
+}
+.mainpage{
+    background: #FFD700;
+    padding: 15px;
+    margin-left: 47%;
+    border: double 2px black;
+}
+
+.list-group li{
+    margin-bottom: 20px;
+    background-color: #2C2C2C;
+    border: 2px solid #B22222;
+    color: white;
+}
+.movie-poster{
+    border: 2px solid #FFD700;
+}
+.movie-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.movie-rating {
+    margin-bottom: 10px; 
+    margin-left: 45px;
+}
+.movie-plot {
+    margin-bottom: 10px; 
+}
+.btn-secondary {
+    margin-left: 40px;
+}
+.btn-remove{
+    width: 50%;
+    background: #FFD700;
+    padding: 15px;
+    margin-right: 16%;
+    border: double 2px black;
+}
+.watched {
+    border: 2px solid green;
+}

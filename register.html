@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            padding: 0;
+            margin: 0;
+            background-image: url(movieroom.jpg);
+            background-size: 100%;
+        }
+        .text{
+            color: white;
+        }
+        .movie{
+            text-shadow: 4px 4px black;
+        }
+        .navbar{
+            margin: 3% auto;
+            text-align: center;
+            padding: 20px;
+            background: #2C2C2C;
+            border: solid 3px #B22222;
+            width: 20%;
+        }
+        .container{
+           width: 20%;
+           background: #2C2C2C;
+           padding: 20px 0;
+           margin: 4% auto;
+           text-align: center;
+           min-height: 18vh;
+           border: solid 3px #B22222;
+        }
+        
+        .input-box{
+            display: flex;
+            flex-direction: column; 
+            align-items: center; 
+            margin: 5px;
+        }
+        .btn{
+            margin-top: 25px;
+            font-size: 20px;
+            background-color: #FFD700;
+        }
+        .account{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+		<h1 class="movie text">MOVIE DATABASE</h1>
+    </div>
+    <div class="container">
+        <h1 class="text">Register</h1>
+        <div class="input-box text">
+            <p class="text">Your name</p>
+            <input type="text" id="name" placeholder="First and Last name" required>
+        </div>
+        <div class="input-box text">
+            <p class="text">Email</p>
+            <input type="email" id="email" placeholder=" " required>
+        </div>
+        <div class="input-box text">
+            <p class="text">Password</p>
+            <input type="password" id="password" placeholder="at least 8 characters" required>
+        </div>
+        <div class="input-box text">
+            <p class="text">Re-enter Password</p>
+            <input type="password" id="confirm-password" placeholder=" " required>
+        </div>
+        <button type="submit" class="btn" onclick="registerUser(event)">Create Account</button>
+        <p class="text">Already have an account?</p>
+        <a href=login.html class="account">Sign in</a>
+    </div>
+    <script>
+        function registerUser(event) {
+            event.preventDefault();
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirm-password').value;
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match");
+                return;
+            }
+
+            var storedEmail = localStorage.getItem('email');
+            if (storedEmail === email) {
+            alert("Email is already registered");
+            return;
+            }
+
+            localStorage.setItem('name', name);
+            localStorage.setItem('email', email);
+            localStorage.setItem('password', password);
+
+            alert("Registration successful");
+
+            window.location.href = "index.html";
+        }
+    
+    </script>
+</body>
+</html>
